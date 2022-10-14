@@ -59,7 +59,7 @@
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery("select * from libros" );
 
-            // Ponemos los resultados en un table de html
+            // Ponemos los resultados en un table de html -------
                                 
             out.println("<table border = \"2\"><thead><tr><th>Num.</th><th>ISBN</th><th>T&iacute;tulo</th><th>Acci&oacute;n</th></tr></thead><tbody>");
             int i=1;
