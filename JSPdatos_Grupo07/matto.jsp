@@ -5,6 +5,7 @@
     /* Paso 1) Obtener los datos del formulario */
     String ls_isbn = request.getParameter("isbn");
     String ls_titulo = request.getParameter("titulo");
+	String ls_action = request.getParameter("autor");
     String ls_action = request.getParameter("Action");
     
     /* Paso 2) Inicializar variables */
@@ -21,10 +22,11 @@
     /* Paso 3) Crear query&nbsp; */
     if (ls_action.equals("Crear")) 
     {
-        ls_query = " insert into libros (isbn, titulo)";
+        ls_query = " insert into libros (isbn, titulo, autor)";
         ls_query += " values (";
         ls_query += "'" + ls_isbn + "',";
         ls_query += "'" + ls_titulo + "')";
+		ls_query += "'" + ls_autor + "')";
     }
     
     if (ls_action.equals("Eliminar")) 
@@ -37,6 +39,7 @@
     {
         ls_query = " update libros";
         ls_query += " set titulo= " + "'" + ls_titulo + "'";
+		ls_query += " set autor= " + "'" + ls_autor + "'";
         ls_query += " where isbn = " + "'" + ls_isbn + "'";
     }
     

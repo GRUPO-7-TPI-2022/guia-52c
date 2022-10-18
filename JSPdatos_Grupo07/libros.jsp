@@ -14,6 +14,9 @@
             <tr>
                <td>T&iacutetulo:<input type="text" name="titulo" value="" size="50"/></td>
             </tr>
+			<tr>
+               <td>Autor:<input type="text" name="autor" value="" size="50"/></td>
+            </tr>
             <tr>
                <td>Acti&oacuten:
                   <input type="radio" name="Action" value="Actualizar"/> Actualizar
@@ -25,8 +28,7 @@
                </td>
          </table>
       </form>
-      <br>
-      <br>
+      
       <%!
          public Connection getConnection(String path) throws SQLException 
          {
@@ -61,7 +63,7 @@
 
             // Ponemos los resultados en un table de html -------
                                 
-            out.println("<table border = \"2\"><thead><tr><th>Num.</th><th>ISBN</th><th>T&iacute;tulo</th><th>Acci&oacute;n</th></tr></thead><tbody>");
+            out.println("<table border = \"2\"><thead><tr><th>Num.</th><th>ISBN</th><th>T&iacute;tulo</th><th>Autor</th><th>Acci&oacute;n</th></tr></thead><tbody>");
             int i=1;
             String prueba = "";
             while (rs.next())
@@ -71,6 +73,7 @@
                out.println("<td>"+ i +"</td>");
                out.println("<td>"+prueba+"</td>");
                out.println("<td>"+rs.getString("titulo")+"</td>");
+			   out.println("<td>"+rs.getString("autor")+"</td>");
                out.println("<td>"+"Actualizar<br><a href=\"matto.jsp?isbn="+prueba+"&Action=Eliminar\">Eliminar</a>"+"</td>");
                out.println("</tr>");
                i++;
