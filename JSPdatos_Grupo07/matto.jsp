@@ -3,6 +3,7 @@
  
 <%
     /* Paso 1) Obtener los datos del formulario */
+    /* prueba */
     String ls_isbn = request.getParameter("isbn");
     String ls_titulo = request.getParameter("titulo");
     String ls_action = request.getParameter("Action");
